@@ -1,0 +1,67 @@
+// See README.txt for information and build instructions.
+//
+// Note: START and END tags are used in comments to define sections used in
+// tutorials.  They are not part of the syntax for Protocol Buffers.
+//
+// To get an in-depth walkthrough of this file and the related examples, see:
+// https://developers.google.com/protocol-buffers/docs/tutorials
+
+// [START declaration]
+syntax = "proto3";
+package ns3;
+
+import "google/protobuf/timestamp.proto";
+// [END declaration]
+
+
+// [START messages]
+message TelemetryMessage {
+  int32 uavID = 1;  // Unique ID number for this person.
+  int64 uavArrivalTime = 2;
+  int64 gcsArrivalTime = 3;
+  UpdateType update = 4;
+
+  enum UpdateType {
+    BatteryUpdate= 0;
+    PositionUpdate= 1;
+    PositionVelocityNedUpdate= 2;
+  }
+  google.protobuf.Timestamp last_updated = 5;
+
+  message BatteryInfo {
+    uint32 id = 1;
+    float voltage_v = 2;
+    float remaining_percent = 3;
+  }
+
+  BatteryInfo battery = 6;
+
+  message PositionInfo {
+    double latitude_deg = 1;
+    double longitude_deg = 2;
+    float absolute_altitude_m = 3;
+    float relative_altitude_m = 4;
+  }
+  PositionInfo position = 7;
+
+  message PositionVelocityNed {
+    PositionNed position = 1;
+    VelocityNed velocity = 2;
+
+    message PositionNed {
+      float north_m = 1;
+      float east_m = 2;
+      float down_m = 3;
+    }
+    message VelocityNed {
+      float north_m_s = 1;
+      float east_m_s = 2;
+      float down_m_s = 3;
+    }
+  }
+
+  PositionVelocityNed positionVelocityNed = 8;
+
+}
+
+// [END messages]

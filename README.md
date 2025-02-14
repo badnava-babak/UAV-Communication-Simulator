@@ -1,7 +1,3 @@
-You can include the images in your README by placing them in a directory (e.g., `images/`) and referencing them using Markdown syntax. Here’s how your updated README will look:  
-
----
-
 # UAV Network Simulation with NS-3 and Ardupilot  
 
 ## Overview  

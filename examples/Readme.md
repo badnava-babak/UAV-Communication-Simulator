@@ -1,0 +1,1 @@
+to make sure that the code would work perfectly with multiple UAVs, build it with RelWithDebInfo.
