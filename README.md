@@ -53,7 +53,5 @@ To use this simulator, you need:
 ### Average RSRP  
 ![Average RSRP](results/rsrp.png)  
 
-## Example Scenarios  
+## Scenario  
 - **Multi-UAV Communication**: Evaluates network performance in swarming UAVs.  
-- **Relay-Based Communication**: Simulates UAVs acting as relay nodes.  
-- **Interference and Link Quality Analysis**: Studies signal degradation in dynamic UAV networks.
